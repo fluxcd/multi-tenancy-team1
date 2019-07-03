@@ -1,0 +1,4 @@
+namespace: team1
+bases:
+  - ./workloads/podinfo/
+  - ./workloads/podinfov2/
