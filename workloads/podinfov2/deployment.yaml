@@ -26,6 +26,8 @@ spec:
         - name: podinfod
           image: quay.io/stefanprodan/podinfo:1.4.0
           imagePullPolicy: IfNotPresent
+          securityContext:
+            allowPrivilegeEscalation: true
           ports:
             - containerPort: 9898
               name: http
