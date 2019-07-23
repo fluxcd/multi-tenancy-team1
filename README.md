@@ -2,4 +2,4 @@
 
 Demo repository for managing a multi-tenant cluster with Flux and Kustomize.
 
-Part of https://github.com/stefanprodan/fluxcd-multi-tenancy
+Part of https://github.com/fluxcd/multi-tenancy
