@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: podinfo
+  name: backend
 spec:
   type: ClusterIP
   selector:
-    app: podinfo
+    app: backend
   ports:
     - name: http
       port: 9898

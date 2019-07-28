@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: podinfov2
+  name: backend
   labels:
-    app: podinfov2
+    app: backend
 spec:
   minReadySeconds: 5
   revisionHistoryLimit: 5
@@ -14,13 +14,13 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: podinfov2
+      app: backend
   template:
     metadata:
       annotations:
         prometheus.io/scrape: "true"
       labels:
-        app: podinfov2
+        app: backend
     spec:
       containers:
         - name: podinfod

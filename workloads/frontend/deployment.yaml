@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: podinfo
+  name: frontend
   labels:
-    app: podinfo
+    app: frontend
 spec:
   minReadySeconds: 5
   revisionHistoryLimit: 5
@@ -14,17 +14,17 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: podinfo
+      app: frontend
   template:
     metadata:
       annotations:
         prometheus.io/scrape: "true"
       labels:
-        app: podinfo
+        app: frontend
     spec:
       containers:
         - name: podinfod
-          image: quay.io/stefanprodan/podinfo:1.4.0
+          image: quay.io/stefanprodan/podinfo:1.7.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9898
@@ -36,6 +36,7 @@ spec:
             - --level=info
             - --random-delay=false
             - --random-error=false
+            - --backend-url=http://backend:9898/echo
           env:
             - name: PODINFO_UI_COLOR
               value: blue
