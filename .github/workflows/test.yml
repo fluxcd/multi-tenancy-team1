@@ -1,0 +1,17 @@
+on: [push, pull_request]
+name: test
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: kubeval
+        uses: stefanprodan/kube-tools@v1
+        with:
+          command: |
+            kustomize build . | kubeval --strict --ignore-missing-schemas
+      - name: conftest
+        uses: stefanprodan/kube-tools@v1
+        with:
+          command: |
+            kustomize build . | conftest test -p .github/policy -
