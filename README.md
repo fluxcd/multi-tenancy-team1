@@ -1,6 +1,12 @@
 # fluxcd-multi-tenancy-team1
 
-[![test](https://github.com/fluxcd/multi-tenancy-team1/workflows/test/badge.svg)](https://github.com/fluxcd/multi-tenancy-team1/blob/master/.github/workflows/test.yml)
+## We are moving to Flux v2
+
+> ⚠️ Please note: In preparation of [Flux v2](https://toolkit.fluxcd.io/) GA this repository with Flux v1 examples has been archived. The Flux v2 equivalent of what is shown here can be found at [flux2-multi-tenancy](https://github.com/fluxcd/flux2-multi-tenancy).
+>
+> Thanks a lot for your interest.
+
+## For posterity
 
 Demo repository for managing a multi-tenant cluster with Flux and Kustomize,
 part of [fluxcd/multi-tenancy](https://github.com/fluxcd/multi-tenancy).
